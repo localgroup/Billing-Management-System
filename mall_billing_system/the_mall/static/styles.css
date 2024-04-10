@@ -2,11 +2,11 @@
 .navbar {
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1000; 
 }
 
 
-/* Reset default styles */
+/* body */
 body {
     background-color: #343a40; /* Dark gray background color */
     margin: 0;
@@ -24,15 +24,14 @@ body {
     padding: 20px;
     background-color: #F6F5F5; /* Light gray container background */
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Increased shadow for depth */
-}
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
 
 /* Heading styles */
 h2 {
     color: #333;
-    margin-bottom: 20px; /* Add some spacing below headings */
-    font-weight: 600; /* Make the font weight bolder */
-    font-size: 24px; /* Increase font size */
+    margin-bottom: 20px; 
+    font-weight: 600; 
+    font-size: 24px; 
 }
 
 /* Input group styles */
@@ -48,28 +47,27 @@ h2 {
 
 .input-group input,
 .input-group select {
-    width: calc(100% - 20px); /* Adjust input width */
+    width: calc(100% - 20px); 
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    font-size: 16px; /* Increase font size */
-    background-color: #fff; /* White background for inputs */
+    font-size: 16px; 
+    background-color: #fff; 
 }
 
 /* Button styles */
 .button,
 .submit-button {
     display: inline-block;
-    padding: 12px 24px; /* Increased padding for larger buttons */
+    padding: 12px 24px; 
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease; /* Smooth transition */
-    font-size: 16px; /* Increase font size */
+    text-decoration: none; 
+    font-size: 16px; 
 }
 
 .button:hover,
@@ -89,11 +87,11 @@ table {
 }
 
 th, td {
-    padding: 12px; /* Increased padding for table cells */
+    padding: 12px; 
     border-bottom: 1px solid #ddd;
     text-align: left;
-    font-size: 16px; /* Increase font size */
-    font-weight: 400; /* Set font weight to normal */
+    font-size: 16px; 
+    font-weight: 400; 
 }
 
 th {
