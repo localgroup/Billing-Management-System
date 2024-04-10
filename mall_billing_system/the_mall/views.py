@@ -152,7 +152,7 @@ def register_user(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')  # Redirect to login page after successful registration
+            return redirect('login')  
     else:
         form = UserCreationForm()
     return render(request, 'registration.html', {'form': form})
@@ -185,7 +185,7 @@ def logout(request):
 
 def generate_slip(request):
     if request.method == 'POST':
-        customer_id = request.POST.get('customer_id')  # Retrieve customer_id from the form data
+        customer_id = request.POST.get('customer_id')  
         if customer_id:
             customer = get_object_or_404(Customer, id=customer_id)
             product_id = request.POST.get('product_id')
