@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="/static/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+<h1>Your home to digitize billing.</h1>
+<p><b>Generate billing slips quickly and accurately for each customer transaction.</b></p></br></br>
+
+ {% if user.is_authenticated %}
+<form action="{% url 'generate_slip'  %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="customer">Select Customer:</label>
+        <select id="customer" name="customer_id">
+            {% for customer in customers %}
+                <option value="{{ customer.id }}">{{ customer.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="product">Product:</label>
+        <select id="product" name="product_id">
+            {% for product in products %}
+                <option value="{{ product.id }}">{{ product.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+    </div>
+    <button type="submit" class="submit-button" >Generate Slip</button>
+</form>
+
+{% else %}
+            <p>Please login.</p>
+        {% endif %}
+
+
+
+{% endblock %}

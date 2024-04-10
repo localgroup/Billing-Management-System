@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Slip</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+    <h2>Billing Slip</h2>
+        <p>Customer: {{ customer.name }}</p>
+        <p>Product: {{ product.name }}</p>
+        <p>Price per item: ₹{{ product.price }}</p>
+        <p>Quantity: {{ quantity }}</p>
+         <p id="total-price">Total Price: ₹<span id="total-amount"></span></p>
+
+         <script>
+            // Get the product price and quantity from the template
+            var productPrice = {{ product.price }};
+            var quantity = {{ quantity }};
+
+            // Calculate the total price
+            var totalPrice = productPrice * quantity;
+
+            // Display the total price on the page
+            document.getElementById("total-amount").innerText = totalPrice.toFixed(2);
+        </script>
+
+    </div>
+</body>
+</html>
+
+
+
+{% endblock %}

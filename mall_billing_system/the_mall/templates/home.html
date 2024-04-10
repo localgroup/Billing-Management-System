@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Mall Billing System</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to the <b>Mall Billing System</b></h1>
+    </header>
+    <div class="container">
+        <h2>Welcome, {% if user.is_authenticated %}<b>{{ user.username }}</b>{% else %}Guest{% endif %}</h2>
+    </div>
+    <main>
+        <p><b>In the bustling world of retail, managing products, customers, and billing efficiently is crucial.
+            Our Mall Billing System provides you with the tools you need to streamline these processes, making your
+            mall operations smoother and more effective.</b></p>
+
+        <p><b>Features:</b>
+
+            </br>Product Management: Easily add, update, and delete products in your inventory.
+            </br>Customer Management: Manage your customer database with ease.
+            </br>Billing: Generate billing slips quickly and accurately for each customer transaction.
+
+        </p>
+
+        <p><b>User Authentication:</b>
+
+            </br>Secure user authentication ensures that only authorized personnel can access and manage the system.
+            User authentication provides an added layer of security, safeguarding your data and operations.
+
+        </p>
+
+        <p><b>Efficient and Intuitive Interface:</b>
+
+            </br>Our user-friendly interface makes navigating the system a breeze. With clear and intuitive design
+            elements, users can quickly find the information they need and perform tasks efficiently.
+
+        </p>
+
+
+    </main>
+
+    <footer>
+        <p><b>&copy; {% now "Y" %} Rajdeep Bhattacharjee</b>. All rights reserved.</p>
+    </footer>
+
+
+
+</body>
+</html>
+
+
+{% endblock %}
+
