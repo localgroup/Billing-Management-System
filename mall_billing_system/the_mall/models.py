@@ -5,9 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class CustomUser(AbstractUser):
-    # Your custom fields
 
-    # Add related_name to avoid clash with auth.User
     groups = models.ManyToManyField(
         Group,
         verbose_name=_('groups'),
