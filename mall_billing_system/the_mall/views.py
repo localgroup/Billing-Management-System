@@ -175,7 +175,7 @@ def delete_product(request, product_id):
     if request.method == 'POST':
         product.delete()
         return redirect('products')
-    return render(request, 'confirm_delete_product.html', {'product': product})
+    return render(request, 'products.html', {'product': product})
 
 
 def logout(request):
